@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'brisa';
+    src: url("/src/fonts/BrisaPro-Regular.woff2");
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "haferxregular";
+    src: url("/src/fonts/HafferXHRegular.woff2");
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'hafermonoregular';
+    src: url("/src/fonts/HafferMonoRegular.woff2");
+    font-display: swap;
+    font-style: normal;
+}

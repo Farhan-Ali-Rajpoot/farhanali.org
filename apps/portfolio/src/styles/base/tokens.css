@@ -1,0 +1,38 @@
+
+:root {
+  --color-bg: #F0EEED;          
+  --color-bg-dark: #18181B;
+
+  --color-bg-surface-dark: #242424;
+  --color-bg-surface-dark-secondary: #414141;
+  --color-bg-surface-light: #FCFFFE;
+  --color-bg-surface-light-secondary: #F0EEED;
+  --color-border-light: #e1e1e1;
+
+  --color-text: #1c1d20;        
+  --color-text-light: #ffffff;        
+  --color-text-muted: #999da0;  
+
+  --color-green : #6F9C76;
+  --color-blue: #6840FF;
+  --color-red: #F84131;
+
+  --color-bg-press: oklch(0.92 0.04 220);
+  --color-bg-overlay: color-mix(in oklab, oklch(0% 0 0) 40%, transparent);;
+
+  --pad-page-x: 4rem;            
+  --pad-page-y: 8rem;            
+  --radius-button: 10rem;        
+  --radius-card: 0.5rem;         
+
+  --ease-snellenberg: cubic-bezier(0.76, 0, 0.24, 1);
+  --trans-smooth: 0.5s var(--ease-snellenberg);
+  --trans-fast: 0.25s var(--ease-snellenberg);
+}
+
+@media screen and (max-width: 991px) {
+  :root {
+    --pad-page-x: 2rem;         
+    --pad-page-y: 5rem;
+  }
+}

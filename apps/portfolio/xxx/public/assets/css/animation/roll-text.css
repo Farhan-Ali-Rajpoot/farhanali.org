@@ -1,0 +1,30 @@
+.roll-trigger:hover .text-roll-1 {
+    transform: translateY(-100%);
+}
+
+.roll-trigger:hover .text-roll-2 {
+    transform: translateY(0%) !important;
+}
+
+
+
+.line-reveal-trigger .line-to-reveal {
+  transform-origin: right !important;
+}
+
+.line-reveal-trigger[data-active] .line-to-reveal {
+  transform-origin:  left !important;
+  transform: scaleX(1) !important;
+}
+
+.line-reveal-trigger:hover .line-to-reveal {
+  transform: scaleX(1) !important;
+  transform-origin: left !important;
+  transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s !important;
+}
+
+.line-reveal-trigger[data-active]:hover .line-to-reveal {
+  transform: scaleX(0) !important;
+  transform-origin: right !important;
+  transition: transform .6s cubic-bezier(0.075, 0.82, 0.165, 1) 0s !important;
+}

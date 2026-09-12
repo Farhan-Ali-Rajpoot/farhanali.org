@@ -1,0 +1,36 @@
+/* --- Base States (Keep these outside media queries) --- */
+.line-reveal-trigger .line-to-reveal {
+  transform-origin: right !important;
+}
+
+.line-reveal-trigger[data-active] .line-to-reveal {
+  transform-origin: left !important;
+  transform: scaleX(1) !important;
+}
+
+/* --- Desktop / Cursor ONLY Animations --- */
+@media (hover: hover) {
+  
+  /* Text Roll Hover Trigger */
+  .roll-trigger:hover .text-roll-1 {
+    transform: translateY(-100%);
+  }
+
+  .roll-trigger:hover .text-roll-2 {
+    transform: translateY(0%) !important;
+  }
+
+  /* Line Reveal Hover Trigger */
+  .line-reveal-trigger:hover .line-to-reveal {
+    transform: scaleX(1) !important;
+    transform-origin: left !important;
+    transition: transform .5s cubic-bezier(0.76, 0, 0.24, 1) 0s !important;
+  }
+
+  /* Active State Line Hover Override */
+  .line-reveal-trigger[data-active]:hover .line-to-reveal {
+    transform: scaleX(0) !important;
+    transform-origin: right !important;
+    transition: transform .6s cubic-bezier(0.76, 0, 0.24, 1) 0s !important;
+  }
+}

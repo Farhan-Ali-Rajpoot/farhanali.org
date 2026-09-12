@@ -1,0 +1,23 @@
+---
+import RootLayout from "../layouts/RootLayout.astro";
+import { type Metadata } from "../types/Metadata";
+
+const metadata: Metadata = {
+	title: "Contact • Farhan Ali",
+    description: "I'm Farhan Ali, a software engineer building deep software, fast web experiences, and simple interfaces. View my portfolio, GitHub projects, and get in touch.",
+    openGraph: {
+        title: "Contact • Farhan Ali",
+        description: "I'm Farhan Ali, a software engineer building deep software, fast web experiences, and simple interfaces. View my portfolio, GitHub projects, and get in touch."
+    },
+    twitter: {
+        title: "Contact • Farhan Ali",
+        description: "I'm Farhan Ali, a software engineer building deep software, fast web experiences, and simple interfaces. View my portfolio, GitHub projects, and get in touch."
+    },
+};
+---
+
+
+
+<RootLayout path="/contact" metadata={metadata}>
+    Contact
+</RootLayout>

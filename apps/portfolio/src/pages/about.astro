@@ -1,0 +1,24 @@
+---
+import RootLayout from "../layouts/RootLayout.astro";
+import { type Metadata } from "../types/Metadata";
+
+const metadata: Metadata = {
+	title: "About • Farhan Ali",
+    description: "Farhan Ali is a software engineer based in Pakistan who builds deep software with a clean and simple look.",
+    openGraph: {
+        title: "About • Farhan Ali",
+        description: "Farhan Ali is a software engineer based in Pakistan who builds deep software with a clean and simple look."
+    },
+    twitter: {
+        title: "About • Farhan Ali",
+        description: "Farhan Ali is a software engineer based in Pakistan who builds deep software with a clean and simple look."
+    },
+};
+---
+
+
+
+<RootLayout path="/about" metadata={metadata}>
+    About
+    <div style="height: 200vh;"></div>
+</RootLayout>

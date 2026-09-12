@@ -1,0 +1,524 @@
+---
+const footerSitemap = [
+    {
+        title: "Menu",
+        children: [
+            { label: "Home", href: "/" },
+            { label: "About me", href: "/about" },
+            { label: "Terms of Use", href: "/terms" },
+            { label: "Privacy Policy", href: "/privacy" },
+        ],
+    },
+    {
+        title: "Library",
+        children: [
+            {
+                label: "My Journey & Lessons",
+                href: "https://library.farhanali.org",
+            },
+            {
+                label: "Science vs. Religion",
+                href: "https://library.farhanali.org",
+            },
+            {
+                label: "History, Wars & Humanity",
+                href: "https://library.farhanali.org",
+            },
+        ],
+    },
+    {
+        title: "Contact",
+        children: [
+            { label: "me@farhanali.org", href: "mailto:me@farhanali.org" },
+            { label: "+92 300 1174715", href: "tel:+923001174715" },
+        ],
+    },
+];
+---
+
+<style>
+    @media (max-width: 991px) {
+        .footer-top-section {
+            flex-direction: column !important;
+        }
+        .footer-top-section .navigation {
+            width: 100% !important;
+            padding-top: calc(var(--sfu) * 4) !important;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .footer-top-section .navigation .sitemap {
+            flex-direction: column !important;
+        }
+        .footer-top-section .navigation .accordion-cross {
+            display: inline-block !important;
+        }
+        .footer-top-section .navigation .accordion-section {
+            width: 100% !important;
+        }
+        .footer-top-section {
+            padding: 0 !important;
+        }
+        .footer-top-section .decoration {
+            padding: 0 calc(var(--sfu) * 1.75) 0 calc(var(--sfu) * 1.75) !important;
+        }
+        .footer-top-section .navigation {
+            padding: calc(var(--sfu) * 1.75) 0 calc(var(--sfu) * 1.75) 0 !important;
+        }
+        .footer-top-section .navigation .cta-container {
+            padding: calc(var(--sfu) * 2.75) calc(var(--sfu) * 1.75)
+                calc(var(--sfu) * 2.75) calc(var(--sfu) * 1.75) !important;
+        }
+        .footer-top-section
+            .navigation
+            .accordion-section
+            .accordion
+            .title-strip {
+            padding: calc(var(--sfu) * 1.35) calc(var(--sfu) * 1.5) !important;
+        }
+        .footer-top-section .navigation .content-to-reveal {
+            padding: 0 calc(var(--sfu) * 1.5) 0 calc(var(--sfu) * 1.5) !important ;
+            overflow: hidden !important;
+        }
+        .footer-top-section {
+            gap: calc(var(--sfu) * 3);
+        }
+
+        .accordion-radio:checked + .accordion .accordion-cross {
+            transform: rotate(360deg) !important;
+        }
+        .accordion-radio:checked + .accordion .content-to-reveal {
+            grid-template-rows: 1fr !important;
+            padding: calc(var(--sfu) * 0) 0 calc(var(--sfu) * 2)
+                calc(var(--sfu) * 1.5) !important;
+        }
+        .accordion-radio:checked + .accordion label[for="sitemap-reset"] {
+            display: block !important;
+            z-index: 20 !important;
+        }
+        .footer-top-section .accordion .title-strip:active {
+            background-color: var(--color-bg-press) !important;
+        }
+    }
+    @media (min-width: 767px) {
+        .footer-top-section .navigation .accordion-section .accordion {
+            border: none !important;
+        }
+        .footer-top-section .navigation .accordion-section .content-to-reveal {
+            grid-template-rows: 1fr !important;
+            padding-top: calc(var(--sfu) * 2.5);
+        }
+    }
+</style>
+
+<footer
+    style="width: 100%; min-height: 100vh; max-height: fit-content; display: flex; flex-direction: column; align-items: center; justify-content: space-between; 
+    padding: calc(var(--sfu)*3) 0 calc(var(--sfu)*1.75) 0;"
+>
+    <!-- Top Section -->
+    <div
+        class="footer-top-section"
+        style="display: flex; justify-content: space-between; width: 100%; padding-bottom: calc(var(--sfu)*3); padding: 0 calc(var(--sfu)*1.75) 0 calc(var(--sfu)*1.75) ;"
+    >
+        <!-- Social Links -->
+        <div
+            class="decoration"
+            style="width: 50%; display: flex; align-items: start; justify-content: start;"
+        >
+            <div
+                class="social-links"
+                style="justify-self: start; display: flex; flex-direction: column; justify-content: center; align-items: start; gap: calc(var(--sfu)*0.25)"
+            >
+                <div style="display: flex; gap: calc(var(--sfu)*.25);">
+                    <a
+                        data-magnetic
+                        href="https://www.instagram.com/ali_farhan_oop"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                        style="height: calc(var(--sfu)*3.5); width: calc(var(--sfu)*3.5); border-top-left-radius: 50%; background-color: var(--color-bg-surface-dark); 
+                            display: flex; align-items: center; justify-content: center; color: var(--color-text-light, #ffffff); text-decoration: none; 
+                            border: calc(var(--sfu)*.0625) solid transparent; flex-shrink: 0;"
+                    >
+                        <svg
+                            data-magnetic-inner
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <rect
+                                x="2"
+                                y="2"
+                                width="20"
+                                height="20"
+                                rx="5"
+                                ry="5"></rect>
+                            <path
+                                d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                            ></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+
+                    <a
+                        data-magnetic
+                        href="https://www.tiktok.com/@duferminded"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="TikTok"
+                        style="height: calc(var(--sfu)*3.5); width: calc(var(--sfu)*3.5); border-radius: 0%; background-color: var(--color-bg-surface-dark); 
+                            display: flex; align-items: center; justify-content: center; color: var(--color-text-light, #ffffff); text-decoration: none;
+                            border: calc(var(--sfu)*.0625) solid transparent; flex-shrink: 0;"
+                    >
+                        <svg
+                            data-magnetic-inner
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"
+                            ></path>
+                        </svg>
+                    </a>
+
+                    <a
+                        data-magnetic
+                        href="http://www.youtube.com/@farhan_ali_rajpoot_t"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                        style="height: calc(var(--sfu)*3.5); width: calc(var(--sfu)*3.5); border-top-right-radius: 50%; border-bottom-right-radius: 50%; background-color: var(--color-bg-surface-dark); display: flex; 
+                            align-items: center; justify-content: center; color: var(--color-text-light, #ffffff); text-decoration: none; 
+                            border: calc(var(--sfu)*.0625) solid transparent; flex-shrink: 0;"
+                    >
+                        <svg
+                            data-magnetic-inner
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                            >
+                            </path>
+                            <polygon
+                                points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+                            ></polygon>
+                        </svg>
+                    </a>
+                </div>
+
+                <div style="display: flex; gap: calc(var(--sfu)*.25);">
+                    <a
+                        data-magnetic
+                        href="https://linkedin.com/in/YOUR_USERNAME"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        style="height: calc(var(--sfu)*3.5); width: calc(var(--sfu)*3.5); border-radius: 0%; background-color: var(--color-bg-surface-dark); display: flex;
+                            align-items: center; justify-content: center; color: var(--color-text-light, #ffffff); text-decoration: none;
+                            border: calc(var(--sfu)*.0625) solid transparent; flex-shrink: 0;"
+                    >
+                        <svg
+                            data-magnetic-inner
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                            >
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+
+                    <a
+                        data-magnetic
+                        href="https://x.com/FaranAli_Dev"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="X (Twitter)"
+                        style="height: calc(var(--sfu)*3.5); width: calc(var(--sfu)*3.5); border-bottom-right-radius: 50%; background-color: var(--color-bg-surface-dark); display: flex;
+                            align-items: center; justify-content: center; color: var(--color-text-light, #ffffff); text-decoration: none; 
+                            border: calc(var(--sfu)*.0625) solid transparent; flex-shrink: 0;"
+                    >
+                        <svg
+                            data-magnetic-inner
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                            <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"
+                            ></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div>
+                    <a
+                        data-magnetic
+                        href="https://github.com/Farhan-Ali-Rajpoot/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                        style="height: calc(var(--sfu)*3.5); width: calc(var(--sfu)*3.5); border-bottom-left-radius: 50%; border-bottom-right-radius: 50%; background-color: var(--color-bg-surface-dark); 
+                            display: flex; align-items: center; justify-content: center; color: var(--color-text-light, #ffffff); text-decoration: none; 
+                            border: calc(var(--sfu)*.0625) solid transparent; flex-shrink: 0;"
+                    >
+                        <svg
+                            data-magnetic-inner
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                d="M15 22v-4a4.8 4.8 0 0 0-1-3.03c3.18-.36 6.5-1.59 6.5-7a5.2 5.2 0 0 0-1.5-3.8 4.6 4.6 0 0 0-.1-3.8s-1.2-.3-3.9 1.5a13.3 13.3 0 0 0-7 0C6.2 1.6 5 1.9 5 1.9a4.6 4.6 0 0 0-.1 3.8A5.2 5.2 0 0 0 3 9.5c0 5.4 3.3 6.6 6.5 7a4.8 4.8 0 0 0-1 3.03V22"
+                            >
+                            </path>
+                            <path d="M9 20c-5 1.5-5-2.5-7-3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- navigation  -->
+        <div
+            class="navigation"
+            style="width: 50%; display: flex; flex-direction: column; align-items: start; gap: calc(var(--sfu)*3); padding: 0 calc(var(--sfu)*1.5); 0 calc(var(--sfu)*1.5);"
+        >
+            <!-- Sitemap -->
+            <div class="sitemap" style="display: flex; width: 100%;">
+                {/* reset radio (required for close-on-reclick) */}
+                <input
+                    type="radio"
+                    name="accordion"
+                    id="sitemap-reset"
+                    style="display: none;"
+                />
+                {
+                    footerSitemap.map(({ title, children }, i) => (
+                        <div
+                            class="accordion-section"
+                            style="display: flex; flex-direction: column; width: 33.3333%;"
+                        >
+                            <input
+                                type="radio"
+                                name="accordion"
+                                id={`sitemap-${title}-${i}`}
+                                style="display: none;"
+                                class="accordion-radio"
+                            />
+
+                            <div
+                                class="accordion"
+                                style={` border-top: calc(var(--sfu) * 0.0625) solid #BFBFBF; ${i === footerSitemap.length - 1 ? "border-bottom: calc(var(--sfu) * 0.0625) solid #BFBFBF;" : ""}`}
+                            >
+                                {/* Title */}
+                                <div
+                                    class="title-strip"
+                                    style="display: flex; align-items: center; justify-content: space-between; position: relative;"
+                                >
+                                    <label
+                                        for="sitemap-reset"
+                                        style="position: absolute; inset: 0px; z-index: 10; display: none;"
+                                        class="sitemap-reset"
+                                    />
+                                    <label
+                                        for={`sitemap-${title}-${i}`}
+                                        style="position: absolute; inset: 0px;"
+                                    />
+                                    <div style="font-weight: 500; font-size: calc(var(--sfu)*1.125);">
+                                        {title}
+                                    </div>
+                                    <svg
+                                        class="accordion-cross"
+                                        style="display: none; transform: rotate(45deg); transition: transform .5s cubic-bezier(0.76, 0, 0.24, 1); font-size: calc(var(--sfu)*.75);"
+                                        stroke="currentColor"
+                                        fill="none"
+                                        stroke-width="3.5"
+                                        viewBox="0 0 24 24"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        height="1em"
+                                        width="1em"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <line x1="18" y1="6" x2="6" y2="18" />
+                                        <line x1="6" y1="6" x2="18" y2="18" />
+                                    </svg>
+                                </div>
+
+                                {/* Following links */}
+                                <div
+                                    class="content-to-reveal"
+                                    style="display: grid; grid-template-rows: 0fr; transition: all .5s cubic-bezier(0.76, 0, 0.24, 1);"
+                                >
+                                    <div style="min-height: 0; display: flex; flex-direction: column; ">
+                                        <div style="display: flex; flex-direction: column; gap: calc(var(--sfu)*.5);;">
+                                            {children.map((c) => (
+                                                <a
+                                                    data-active={null}
+                                                    href={c.href}
+                                                    class="line-reveal-trigger"
+                                                    style="position: relative; width: fit-content;"
+                                                >
+                                                    {c.label}
+                                                    <div
+                                                        class="line-to-reveal"
+                                                        style="
+                                                        position: absolute; 
+                                                        bottom: -10%;
+                                                        left: 0; 
+                                                        display: block; 
+                                                        width: 100%; 
+                                                        height: 1px; 
+                                                        background-color: var(--color-text);
+                                                        transition: transform .8s cubic-bezier(0.075, 0.82, 0.165, 1) .3s; 
+                                                        transform: scaleX(0);
+                                                        transform-origin: left; 
+                                                    "
+                                                    />
+                                                </a>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+            <!-- CTA Container -->
+            <div
+                style="justify-content: end; display: flex; align-items: center; padding-bottom: calc(var(--sfu)*4);"
+                class="cta-container"
+            >
+                <a
+                    class="roll-trigger"
+                    data-magnetic
+                    href="https://library.farhanali.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="padding: calc(var(--sfu)*.4) 
+                        calc(var(--sfu)*1.75) calc(var(--sfu)*.4) calc(var(--sfu)*.4); border-radius: calc(var(--sfu)*5); background-color: var(--color-bg-surface-dark); 
+                        color: var(--color-text-light); display: inline-flex; align-items: center; gap: calc(var(--sfu)*.75); cursor: pointer;
+                        width: fit-content; text-decoration: none; border: calc(var(--sfu)*.0625) solid transparent; box-sizing: border-box;
+                    "
+                >
+                    <div
+                        style="height: calc(var(--sfu)*2.6); width: calc(var(--sfu)*2.6); border-radius: 50%; background-color: var(--color-bg-surface-dark-secondary);
+                            display: flex; align-items: center; justify-content: center; flex-shrink: 0;"
+                    >
+                        <svg
+                            stroke="currentColor"
+                            fill="none"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            height="1em"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
+                            ></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                            ></path>
+                        </svg>
+                    </div>
+
+                    <div
+                        data-magnetic-inner
+                        style="position: relative; overflow: hidden;"
+                    >
+                        <p
+                            class="text-roll-1"
+                            style="transition: transform .7s cubic-bezier(0.075, 0.82, 0.165, 1);"
+                        >
+                            Reasearch & Essays
+                        </p>
+                        <p
+                            class="text-roll-2"
+                            style="transition: transform .7s cubic-bezier(0.075, 0.82, 0.165, 1); position: absolute; 
+                                top: 0; left: 0; transform: translateY(100%);"
+                        >
+                            Reasearch & Essays
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Section -->
+    <div style="display: flex; flex-direction: column; width: 100%;">
+        <!-- 
+      - Maintained identical horizontal X-axis padding to align with decorative items below.
+    -->
+        <div
+            style="width: 100%; box-sizing: border-box; padding: 0 calc(var(--sfu)*1.75);"
+        >
+            <svg
+                width="100%"
+                height="auto"
+                viewBox="0 0 499 96"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill="currentColor"
+                    stroke="currentColor"
+                    stroke-width="8"
+                    stroke-linejoin="miter"
+                    d="M4 91.3047V4H61.7734V19.2344H22.3984V43.1992H57.9062V58.1406H22.3984V91.3047H4ZM89.1953 91.3047H69.3906L99.5664 4H123.297L153.414 91.3047H133.668L127.164 71.3828H95.6406L89.1953 91.3047ZM100.328 56.9688H122.477L111.754 23.9219H111.051L100.328 56.9688ZM163.844 91.3047V4H198.18C208.102 4 215.797 6.59766 221.266 11.793C226.773 16.9883 229.527 23.9023 229.527 32.5352C229.527 38.5117 228.199 43.6289 225.543 47.8867C222.887 52.1055 219.078 55.2695 214.117 57.3789L232.633 91.3047H212.242L195.719 60.3672H182.242V91.3047H163.844ZM182.242 45.543H194.723C205.27 45.543 210.543 41.207 210.543 32.5352C210.543 28.1992 209.234 24.8789 206.617 22.5742C204 20.2695 200.016 19.1172 194.664 19.1172H182.242V45.543ZM242.711 91.3047V4H261.109V40.0352H298.551V4H317.008V91.3047H298.551V55.2109H261.109V91.3047H242.711ZM347.242 91.3047H327.438L357.613 4H381.344L411.461 91.3047H391.715L385.211 71.3828H353.688L347.242 91.3047ZM358.375 56.9688H380.523L369.801 23.9219H369.098L358.375 56.9688ZM494.898 4V91.3047H478.902L440.992 36.4023H440.289V91.3047H421.891V4H438.062L475.738 58.9023H476.5V4H494.898Z"
+                ></path>
+            </svg>
+        </div>
+
+        <!-- Decorative Items -->
+        <div
+            style="width: 100%; max-width: var(--size-container); margin-left: auto; margin-right: auto; display: flex; flex-direction: row; justify-content: space-between; position: relative;
+        padding: calc(var(--sfu)*1.75) calc(var(--sfu)*1.75) 0 calc(var(--sfu)*1.75); box-sizing: border-box; font-family: monospace; text-transform: uppercase; font-size: calc(var(--sfu) * 0.7);"
+        >
+            <div style="color: var(--color-text-action); display: flex;">
+                Code by Farhan Ali
+            </div>
+            <div style="" class="sm-absolute-override">
+                © {new Date().getFullYear()} Farhan Ali
+            </div>
+        </div>
+    </div>
+</footer>

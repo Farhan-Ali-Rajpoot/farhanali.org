@@ -1,0 +1,129 @@
+ #menu-switch:checked~.hamburger-icon-wrapper .hamburger-icon .line-top {
+     transform: translateY(4px) rotate(45deg);
+ }
+
+ #menu-switch:checked~.hamburger-icon-wrapper .hamburger-icon .line-bottom {
+     transform: translateY(-4px) rotate(-45deg);
+ }
+
+ #menu-switch:checked~.hamburger-icon-wrapper .hamburger-icon .bg-active {
+     transform: translateY(0) !important;
+ }
+
+ #menu-switch:checked~.hamburger-icon-wrapper .hamburger-icon .bg-active {
+     transform: translateY(0) !important;
+
+ }
+
+ #menu-switch:checked~.bg-wrapper {
+     opacity: 1 !important;
+     pointer-events: all !important;
+ }
+
+ #menu-switch:checked~#menu {
+     opacity: 1 !important;
+     height: calc(var(--sfu)*30) !important;
+     width: calc(var(--sfu)*23) !important;
+     border-radius: calc(var(--sfu)*1) !important;
+     justify-content: space-between !important;
+     padding: calc(var(--sfu)*2) !important;
+     top: calc(var(--sfu)*1) !important;
+     right: calc(var(--sfu)*1) !important;
+     transition: all 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+ }
+
+ #menu a {
+     position: relative;
+     opacity: 0;
+     top: calc(var(--sfu)*-.25);
+     transition: opacity .3s cubic-bezier(0.76, 0, 0.24, 1), opacity .3s cubic-bezier(0.76, 0, 0.24, 1);
+     transition-delay: .0s;
+ }
+
+ #menu-switch:checked~#menu a {
+     top: 0em;
+     opacity: 1;
+ }
+
+ #menu-switch:checked~#menu a:nth-child(1) {
+     transition-delay: .3s;
+ }
+
+ #menu-switch:checked~#menu a:nth-child(2) {
+     transition-delay: .35s;
+ }
+
+ #menu-switch:checked~#menu a:nth-child(3) {
+     transition-delay: .4s;
+ }
+
+ #menu-switch:checked~#menu a:nth-child(4) {
+     transition-delay: .45s;
+ }
+
+ @media (max-width: 768px) {
+
+     .nav-links,
+     .nav-btn {
+         display: none !important;
+     }
+
+
+     #menu {
+         top: calc(var(--sfu)*3) !important;
+         right: calc(var(--sfu)*3) !important;
+         scale: 1 !important;
+     }
+
+     .hamburger-icon {   
+         scale: 1 !important;
+         pointer-events: auto;
+     }
+
+     #menu-switch:checked~#menu {
+         width: 90vw !important;
+     }
+ }
+
+ @media (min-width: 769px) {
+
+    .hamburger-icon {
+         scale: 0 !important;
+         pointer-events: none;
+     }
+
+     .hamburger-icon.is-visible {
+         scale: 1 !important;
+         pointer-events: auto;
+
+     }
+
+     .hamburger-icon-wrapper:has(.hamburger-icon.is-visible)~#menu {
+         scale: 1 !important;
+         pointer-events: auto;
+     }
+ }
+
+ #menu a span, #menu a .dot {
+    transition: transform .4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s !important;
+ }
+
+ #menu a[data-active] span {
+    transform: translateX(20%);
+ }
+
+ #menu a:not([data-active]):hover span {
+    transform: translateX(20%);
+ }
+
+ #menu a .dot {
+    transform: scale(0);
+ }
+
+ #menu a[data-active] .dot {
+    transform: scale(1) !important;
+ }
+
+ #menu a:hover .dot {
+    transform: scale(1) !important;
+ }

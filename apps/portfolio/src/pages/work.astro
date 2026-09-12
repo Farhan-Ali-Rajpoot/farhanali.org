@@ -1,0 +1,23 @@
+---
+import RootLayout from "../layouts/RootLayout.astro";
+import { type Metadata } from "../types/Metadata";
+
+const metadata: Metadata = {
+	title: "Work • Farhan Ali",
+    description: "Explore the software engineering portfolio of Farhan Ali. Featuring high-performance systems, custom Rust architecture like the Omnyx framework.",
+    openGraph: {
+        title: "Work • Farhan Ali",
+        description: "Explore the software engineering portfolio of Farhan Ali. Featuring high-performance systems, custom Rust architecture like the Omnyx framework."
+    },
+    twitter: {
+        title: "Work • Farhan Ali",
+        description: "Explore the software engineering portfolio of Farhan Ali. Featuring high-performance systems, custom Rust architecture like the Omnyx framework."
+    },
+};
+---
+
+
+
+<RootLayout path="/work" metadata={metadata}>
+    Work
+</RootLayout>

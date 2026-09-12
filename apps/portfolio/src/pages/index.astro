@@ -1,0 +1,606 @@
+---
+import RootLayout from "../layouts/RootLayout.astro";
+---
+
+<RootLayout path="/">
+	<style>
+		/* Mobile Screens */
+		@media (max-width: 768px) {
+			.hero-heading {
+				font-size: calc(var(--sfu) * 2.8) !important;
+				line-height: 1.2 !important;
+				padding: 0 0rem !important;
+			}
+
+			.hero-btn-container {
+				flex-direction: column;
+				width: 100%;
+				padding: 0 1.25rem;
+			}
+
+			.hero-btn-container .explore {
+				display: inline !important;
+				margin-right: 0.35rem !important;
+			}
+
+			.hero-section {
+				justify-content: center !important;
+				max-height: fit-content;
+			}
+		}
+
+		@media (max-width: 991px) {
+			.hero-section {
+				height: auto !important;
+				max-height: none !important;
+				grid-template-columns: 1fr !important;
+				justify-items: center !important;
+				gap: 5rem !important;
+			}
+
+			.social-links {
+				order: 1;
+				justify-self: center !important;
+				align-items: center !important;
+				gap: calc(var(--sfu) * -0.5) !important;
+			}
+
+			.sclh {
+				border-radius: 50% !important;
+			}
+
+			.location-widget {
+				order: 2;
+				justify-self: center !important;
+			}
+
+			.hero-container {
+				padding-top: 7rem;
+			}
+		}
+
+		@media (max-width: 512px) {
+			.location-widget {
+				width: 100% !important;
+				height: calc(var(--sfu) * 22) !important;
+			}
+		}
+	</style>
+
+	<!-- Hero section -->
+	<section
+		class="hero-section"
+		style="width: 100%; height: 100vh; max-height: 1200px; padding-bottom: calc(var(--sfu)*2); display: grid; 
+            grid-template-columns: 1fr auto 1fr; align-items: end; justify-content: space-between; width: 100%;
+        "
+	>
+		<!-- Social Links -->
+		<div
+			class="social-links"
+			style="justify-self: start; display: flex; flex-direction: column; justify-content: center; align-items: start; gap: calc(var(--sfu)*0.25)"
+		>
+			<div>
+				<a
+					data-magnetic
+					class="sclh"
+					href="https://github.com/Farhan-Ali-Rajpoot/"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Instagram"
+					style="height: calc(var(--sfu)*3.5); width: calc(var(--sfu)*3.5); border-top-right-radius: 50%; border-top-left-radius: 50%; background-color: var(--color-bg-surface-dark);
+                            display: flex; align-items: center; justify-content: center; color: var(--color-text-light, #ffffff); text-decoration: none; 
+                            border: calc(var(--sfu)*.0625) solid transparent; flex-shrink: 0;"
+				>
+					<svg
+						data-magnetic-inner
+						width="22"
+						height="22"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path
+							d="M15 22v-4a4.8 4.8 0 0 0-1-3.03c3.18-.36 6.5-1.59 6.5-7a5.2 5.2 0 0 0-1.5-3.8 4.6 4.6 0 0 0-.1-3.8s-1.2-.3-3.9 1.5a13.3 13.3 0 0 0-7 0C6.2 1.6 5 1.9 5 1.9a4.6 4.6 0 0 0-.1 3.8A5.2 5.2 0 0 0 3 9.5c0 5.4 3.3 6.6 6.5 7a4.8 4.8 0 0 0-1 3.03V22"
+						>
+						</path>
+						<path d="M9 20c-5 1.5-5-2.5-7-3"></path>
+					</svg>
+				</a>
+			</div>
+
+			<div style="display: flex; gap: calc(var(--sfu)*.25);">
+				<a
+					data-magnetic
+					class="sclh"
+					href="https://linkedin.com/in/YOUR_USERNAME"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="LinkedIn"
+					style="height: calc(var(--sfu)*3.5); width: calc(var(--sfu)*3.5); background-color: var(--color-bg-surface-dark); display: flex;
+                            align-items: center; justify-content: center; color: var(--color-text-light, #ffffff); text-decoration: none;
+                            border: calc(var(--sfu)*.0625) solid transparent; flex-shrink: 0;"
+				>
+					<svg
+						data-magnetic-inner
+						width="22"
+						height="22"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path
+							d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+						>
+						</path>
+						<rect x="2" y="9" width="4" height="12"></rect>
+						<circle cx="4" cy="4" r="2"></circle>
+					</svg>
+				</a>
+
+				<a
+					data-magnetic
+					href="https://x.com/FaranAli_Dev"
+					class="sclh"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="X (Twitter)"
+					style="height: calc(var(--sfu)*3.5); width: calc(var(--sfu)*3.5); border-top-right-radius: 50%; background-color: var(--color-bg-surface-dark); display: flex;
+                            align-items: center; justify-content: center; color: var(--color-text-light, #ffffff); text-decoration: none; 
+                            border: calc(var(--sfu)*.0625) solid transparent; flex-shrink: 0;"
+				>
+					<svg
+						data-magnetic-inner
+						width="20"
+						height="20"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+						<path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"
+						></path>
+					</svg>
+				</a>
+			</div>
+
+			<div style="display: flex; gap: calc(var(--sfu)*.25);">
+				<a
+					data-magnetic
+					class="sclh"
+					href="https://www.instagram.com/ali_farhan_oop"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Instagram"
+					style="height: calc(var(--sfu)*3.5); width: calc(var(--sfu)*3.5); border-bottom-left-radius: 50%; background-color: var(--color-bg-surface-dark); 
+                            display: flex; align-items: center; justify-content: center; color: var(--color-text-light, #ffffff); text-decoration: none; 
+                            border: calc(var(--sfu)*.0625) solid transparent; flex-shrink: 0;"
+				>
+					<svg
+						data-magnetic-inner
+						width="22"
+						height="22"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<rect x="2" y="2" width="20" height="20" rx="5" ry="5"
+						></rect>
+						<path
+							d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+						></path>
+						<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+					</svg>
+				</a>
+
+				<a
+					data-magnetic
+					class="sclh"
+					href="https://www.tiktok.com/@duferminded"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="TikTok"
+					style="height: calc(var(--sfu)*3.5); width: calc(var(--sfu)*3.5); border-radius: 0%; background-color: var(--color-bg-surface-dark); 
+                            display: flex; align-items: center; justify-content: center; color: var(--color-text-light, #ffffff); text-decoration: none;
+                            border: calc(var(--sfu)*.0625) solid transparent; flex-shrink: 0;"
+				>
+					<svg
+						data-magnetic-inner
+						width="22"
+						height="22"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+					</svg>
+				</a>
+
+				<a
+					data-magnetic
+					class="sclh"
+					href="https://www.youtube.com/@FarhanAli-l1d4q"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="YouTube"
+					style="height: calc(var(--sfu)*3.5); width: calc(var(--sfu)*3.5); border-bottom-right-radius: 50%; border-top-right-radius: 50%; background-color: var(--color-bg-surface-dark); display: flex; 
+                            align-items: center; justify-content: center; color: var(--color-text-light, #ffffff); text-decoration: none; 
+                            border: calc(var(--sfu)*.0625) solid transparent; flex-shrink: 0;"
+				>
+					<svg
+						data-magnetic-inner
+						width="22"
+						height="22"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path
+							d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+						>
+						</path>
+						<polygon
+							points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+						></polygon>
+					</svg>
+				</a>
+			</div>
+		</div>
+
+		<!-- Hero -->
+		<div
+			class="hero-container"
+			style="align-self: center; justify-self: center; display: flex; flex-direction: column; gap: calc(var(--sfu)*2); align-items: center; "
+		>
+			<div
+				style="height: calc(var(--sfu)*10); width: calc(var(--sfu)*10); border-radius: 50%; background-color: var(--color-bg-surface-light); 
+                        border: solid calc(var(--sfu)*.25) var(--color-bg-surface-light); position: relative;"
+			>
+				<img
+					src="/images/farhan-ali.png"
+					alt="Farhan Ali"
+					style="object-fit: cover; inset: 0; height: 100%; width: 100%; border-radius: 50%;"
+				/>
+				<div
+					style="padding: calc(var(--sfu)*.6) calc(var(--sfu)*1); border-radius: 5rem; background-color: var(--color-bg-surface-light); 
+                        border: solid calc(var(--sfu)*.1) var(--color-border-light); position: absolute; top: 50%; transform: translateY(-100%) 
+                        rotate(-7deg); left: 80%;"
+				>
+					<div
+						data-magnetic-inner
+						style="width: max-content; display: flex; justify-content: center; align-items: center; gap: calc(var(--sfu)*.5);"
+					>
+						<svg
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							style="height: 0.85em; width: 0.85em; flex-shrink: 0;"
+						>
+							<path
+								d="M12 2c0 5.523-4.477 10-10 10 5.523 0 10 4.477 10 10 0-5.523 4.477-10 10-10-5.523 0-10-4.477-10-10z"
+							></path>
+						</svg>
+						<span>It's me!</span>
+						<svg
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							style="height: 0.85em; width: 0.85em; flex-shrink: 0;"
+						>
+							<path
+								d="M12 2c0 5.523-4.477 10-10 10 5.523 0 10 4.477 10 10 0-5.523 4.477-10 10-10-5.523 0-10-4.477-10-10z"
+							></path>
+						</svg>
+					</div>
+				</div>
+			</div>
+
+			<h1
+				class="hero-heading"
+				style="font-size: calc(var(--sfu) * 3.75); line-height: 1.1; font-weight: 600; text-align: center; max-width: 16ch;"
+			>
+				A <span style="font-style: italic; color: var(--color-blue); "
+					>Researcher</span
+				>, <span style="font-style: italic; color: var(--color-blue);"
+					>software engineer
+				</span> and a <span
+					style="font-style: italic; color: var(--color-blue);"
+					>teeneger</span
+				>
+			</h1>
+
+			<div
+				style="justify-content: end; display: flex; align-items: center; gap: calc(var(--sfu)*1);"
+				class="hero-btn-container"
+			>
+				<a
+					class="roll-trigger"
+					data-magnetic
+					href="https://github.com/Farhan-Ali-Rajpoot/"
+					target="_blank"
+					rel="noopener noreferrer"
+					style="padding: calc(var(--sfu)*.4) 
+                        calc(var(--sfu)*1.75) calc(var(--sfu)*.4) calc(var(--sfu)*.4); border-radius: calc(var(--sfu)*5); background-color: var(--color-bg-surface-dark); 
+                        color: var(--color-text-light); display: inline-flex; align-items: center; gap: calc(var(--sfu)*.75); cursor: pointer;
+                        width: fit-content; text-decoration: none; border: calc(var(--sfu)*.0625) solid transparent; box-sizing: border-box;
+                    "
+				>
+					<div
+						style="height: calc(var(--sfu)*2.6); width: calc(var(--sfu)*2.6); border-radius: 50%; background-color: var(--color-bg-surface-dark-secondary);
+                            display: flex; align-items: center; justify-content: center; flex-shrink: 0;"
+					>
+						<svg
+							width="18"
+							height="18"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path
+								d="M15 22v-4a4.8 4.8 0 0 0-1-3.03c3.18-.36 6.5-1.59 6.5-7a5.2 5.2 0 0 0-1.5-3.8 4.6 4.6 0 0 0-.1-3.8s-1.2-.3-3.9 1.5a13.3 13.3 0 0 0-7 0C6.2 1.6 5 1.9 5 1.9a4.6 4.6 0 0 0-.1 3.8A5.2 5.2 0 0 0 3 9.5c0 5.4 3.3 6.6 6.5 7a4.8 4.8 0 0 0-1 3.03V22"
+							>
+							</path>
+							<path d="M9 20c-5 1.5-5-2.5-7-3"></path>
+						</svg>
+					</div>
+
+					<div
+						data-magnetic-inner
+						style="position: relative; overflow: hidden;"
+					>
+						<p
+							class="text-roll-1"
+							style="transition: transform .7s cubic-bezier(0.075, 0.82, 0.165, 1);"
+						>
+							<span class="explore" style="display: none;"
+								>Explore</span
+							>Github
+						</p>
+						<p
+							class="text-roll-2"
+							style="transition: transform .7s cubic-bezier(0.075, 0.82, 0.165, 1); position: absolute; 
+                                top: 0; left: 0; transform: translateY(100%);"
+						>
+							<span class="explore" style="display: none;"
+								>Explore</span
+							>Github
+						</p>
+					</div>
+				</a>
+
+				<a
+					class="roll-trigger"
+					data-magnetic
+					href="/docs/farhan-ali-cv.pdf"
+					target="_blank"
+					rel="noopener noreferrer"
+					style="padding: calc(var(--sfu)*.4) calc(var(--sfu)*1.75) calc(var(--sfu)*.4) calc(var(--sfu)*.4); border-radius: calc(var(--sfu)*5);
+                            background-color: var(--color-bg-surface-light);  display: inline-flex; align-items: center; gap: calc(var(--sfu)*.75);
+                            cursor: pointer; width: fit-content; border: calc(var(--sfu)*.0625) solid var(--color-btn-secondary-border); text-decoration: none;"
+				>
+					<div
+						style="height: calc(var(--sfu)*2.6); width: calc(var(--sfu)*2.6); border-radius: 50%; background-color: var(--color-bg-surface-light-secondary); display: flex;
+                             align-items: center; justify-content: center; flex-shrink: 0;"
+					>
+						<svg
+							width="18"
+							height="18"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+							></path>
+							<polyline points="7 10 12 15 17 10"></polyline>
+							<line x1="12" y1="15" x2="12" y2="3"></line>
+						</svg>
+					</div>
+
+					<div
+						data-magnetic-inner
+						style="position: relative; overflow: hidden;"
+					>
+						<p
+							class="text-roll-1"
+							style="transition: transform .7s cubic-bezier(0.075, 0.82, 0.165, 1);"
+						>
+							Download CV
+						</p>
+						<p
+							class="text-roll-2"
+							style="transition: transform .7s cubic-bezier(0.075, 0.82, 0.165, 1); position: absolute; 
+                                top: 0; left: 0; transform: translateY(100%);"
+						>
+							Download CV
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<!-- Location -->
+		<div
+			class="location-widget"
+			style="
+	 	    justify-self: end;
+	 	    height: calc(var(--sfu) * 18);
+	 	    width: calc(var(--sfu) * 14.5);
+	 	    border-radius: calc(var(--sfu) * 1.75);
+	 	    background-color: var(--color-bg-surface-light);
+	 	    padding: calc(var(--sfu) * 1);
+	 	    border: calc(var(--sfu) * 0.0625) solid var(--color-border-light);
+	 	    display: flex;
+	 	    flex-direction: column;
+	 	  "
+		>
+			<!-- Top section (globe icon + location text) -->
+			<div
+				style="
+	 	    	  display: flex;
+	 	    	  align-items: center;
+	 	    	  gap: calc(var(--sfu) * 0.5);
+	 	    	  font-family: sans-serif;
+	 	    	  padding-bottom: calc(var(--sfu) * 1);
+	 	    	  flex-shrink: 0;                
+	 	    	"
+			>
+				<!-- Globe Icon -->
+				<div
+					class="location-badge"
+					style="
+	 	      		  background-color: var(--color-bg-surface-light-secondary);
+	 	      		  color: var(--color-text);
+	 	      		  padding: calc(var(--sfu) * 0.5);
+	 	      		  border-radius: calc(var(--sfu) * 5);
+	 	      		  border: calc(var(--sfu) * 0.0625) solid var(--color-border-light);
+	 	      		  display: flex;
+	 	      		  align-items: center;
+	 	      		  justify-content: center;
+	 	      		"
+				>
+					<svg
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						style="opacity: 0.8;"
+					>
+						<circle cx="12" cy="12" r="10"></circle>
+						<line x1="2" y1="12" x2="22" y2="12"></line>
+						<path
+							d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+						></path>
+					</svg>
+				</div>
+
+				<!-- Text -->
+				<div
+					style="
+	 	        		display: flex;
+	 	        		flex-direction: column;
+	 	        		align-items: start;
+	 	        		justify-content: center;
+	 	        		gap: calc(var(--sfu) * 0.1);
+	 	      "
+				>
+					<span
+						class="location-text"
+						style="font-size: calc(var(--sfu) * 1);">Pakistan</span
+					>
+					<span
+						style="
+	 	          			color: var(--color-text-muted);
+	 	          			font-size: calc(var(--sfu) * 0.7);
+	 	        "
+						>@Chowk Sarwar Shaheed</span
+					>
+				</div>
+			</div>
+
+			<!-- Image container – automatically fills remaining height -->
+			<div
+				style="
+	 	      		flex: 1;                        
+	 	      		border-radius: calc(var(--sfu) * 1.75);
+	 	      		display: flex;
+	 	      		align-items: center;
+	 	      		justify-content: center;
+	 	      		overflow: hidden;            
+	 	    "
+			>
+				<img
+					src="/svgs/pk.svg"
+					alt="Pakistan"
+					style="
+	 	        		width: 100%;
+	 	        		height: 100%;
+	 	        		object-fit: contain;           
+	 	      "
+				/>
+			</div>
+		</div>
+	</section>
+
+	<!-- Ribbon -->
+	<div
+		style="margin-top: calc(var(--sfu)*5); padding: calc(var(--sfu)*1.5) 0 calc(var(--sfu)*1.5); width: 100%; background-color: var(--color-green); 
+            display: flex; align-items: center; gap: calc(var(--sfu)*1.5); text-wrap: nowrap; font-size: calc(var(--sfu)*3); color: var(--color-text-light);
+        	overflow-x: hidden;"
+	>
+		Farhan Ali
+		<svg
+			viewBox="0 0 24 24"
+			fill="currentColor"
+			style="height: 0.85em; width: 0.85em; flex-shrink: 0;"
+		>
+			<path
+				d="M12 2c0 5.523-4.477 10-10 10 5.523 0 10 4.477 10 10 0-5.523 4.477-10 10-10-5.523 0-10-4.477-10-10z"
+			></path>
+		</svg>
+		Farhan Ali
+		<svg
+			viewBox="0 0 24 24"
+			fill="currentColor"
+			style="height: 0.85em; width: 0.85em; flex-shrink: 0;"
+		>
+			<path
+				d="M12 2c0 5.523-4.477 10-10 10 5.523 0 10 4.477 10 10 0-5.523 4.477-10 10-10-5.523 0-10-4.477-10-10z"
+			></path>
+		</svg>
+		Farhan Ali
+		<svg
+			viewBox="0 0 24 24"
+			fill="currentColor"
+			style="height: 0.85em; width: 0.85em; flex-shrink: 0;"
+		>
+			<path
+				d="M12 2c0 5.523-4.477 10-10 10 5.523 0 10 4.477 10 10 0-5.523 4.477-10 10-10-5.523 0-10-4.477-10-10z"
+			></path>
+		</svg>
+		Farhan Ali
+		<svg
+			viewBox="0 0 24 24"
+			fill="currentColor"
+			style="height: 0.85em; width: 0.85em; flex-shrink: 0;"
+		>
+			<path
+				d="M12 2c0 5.523-4.477 10-10 10 5.523 0 10 4.477 10 10 0-5.523 4.477-10 10-10-5.523 0-10-4.477-10-10z"
+			></path>
+		</svg>
+		Farhan Ali
+	</div>
+
+	<!-- Introduction -->
+	<section style="padding: calc(var(--sfu)*10) 0 calc(var(--sfu)*10);">
+		<h1
+			style="justify-self: center; font-size: calc((var(--sfu)*5)); text-align: center; line-height: 1; font-weight: 400;"
+		>
+			Who is Farhan?
+		</h1>
+	</section>
+</RootLayout>

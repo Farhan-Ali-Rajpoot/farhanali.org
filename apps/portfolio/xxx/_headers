@@ -1,0 +1,9 @@
+# Apply these rules to every page on the site
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Give your images folder an aggressive 1-year cache rule for maximum performance
+/public/images/*
+  Cache-Control: public, max-age=31536000, immutable
