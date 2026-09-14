@@ -9,32 +9,52 @@ interface Props {
     metadata?: Metadata;
 }
 
-const defaultMetadata: Metadata = {
-    title: "Farhan Ali • Software Engineer based in Pakistan",
+export const defaultMetadata: Metadata = {
+    metadataBase: "https://library.farhanali.org",
+    title: "Library • Farhan Ali — Systems & Engineering Notes",
     description:
-        "Farhan Ali is a software enginner building deep softwares with simple and clean look",
-    metadataBase: "https://farhanali.org",
-    authors: [{ name: "Farhan Ali" }],
-    robots: { index: true, follow: true },
-    themeColor: "#F0EEED",
-    colorScheme: "dark light",
-    alternates: { canonical: "https://farhanali.org" },
+        "A curated digital garden of technical notes, systems architecture insights, Rust patterns, and software engineering resources by Farhan Ali.",
+    authors: [{ name: "Farhan Ali", url: "https://farhanali.org" }],
+    creator: "Farhan Ali",
+    publisher: "Farhan Ali",
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
+    },
+    alternates: {
+        canonical: "https://library.farhanali.org",
+    },
     manifest: "/site.webmanifest",
     openGraph: {
         type: "website",
-        url: "https://farhanali.org",
-        title: "Farhan Ali • Software Engineer based in Pakistan",
+        locale: "en_US",
+        url: "https://library.farhanali.org",
+        siteName: "Library • Farhan Ali",
+        title: "Library • Farhan Ali — Systems & Engineering Notes",
         description:
-            "Farhan Ali is a software enginner building deep softwares with simple and clean look",
-        images: [{ url: "https://farhanali.org/images/social-preview.png" }],
+            "A curated digital garden of technical notes, systems architecture insights, Rust patterns, and software engineering resources by Farhan Ali.",
+        images: [
+            {
+                url: "/images/social-preview.png",
+                width: 1200,
+                height: 630,
+                alt: "Farhan Ali's Technical Library and Digital Garden",
+            },
+        ],
     },
     twitter: {
         card: "summary_large_image",
-        site: "@farhanali.org",
-        title: "Farhan Ali • Software Engineer based in Pakistan",
+        title: "Library • Farhan Ali — Systems & Engineering Notes",
         description:
-            "Farhan Ali is a software enginner building deep softwares with simple and clean look",
-        images: ["https://farhanali.org/images/social-preview.png"],
+            "A curated digital garden of technical notes, systems architecture insights, Rust patterns, and software engineering resources by Farhan Ali.",
+        images: ["/images/social-preview.png"],
     },
 };
 
