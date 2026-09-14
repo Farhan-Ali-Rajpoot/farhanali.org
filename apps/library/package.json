@@ -1,5 +1,5 @@
 {
-  "name": "library",
+  "name": "portfolio",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -12,9 +12,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.3.2"
-  },
-  "allowScripts": {
-    "esbuild": true
+    "astro": "^7.0.2",
+    "gsap": "^3.15.0",
+    "swup": "^4.9.2",
+    "swup-morph-plugin": "^2.0.0"
   }
 }

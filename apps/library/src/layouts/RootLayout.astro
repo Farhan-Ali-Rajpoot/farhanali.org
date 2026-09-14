@@ -1,0 +1,297 @@
+---
+import "../styles/style.css";
+import { type Metadata, mergeMetadata } from "../types/Metadata";
+
+import Footer from "./Footer.astro";
+
+interface Props {
+    path?: string;
+    metadata?: Metadata;
+}
+
+const defaultMetadata: Metadata = {
+    title: "Farhan Ali • Software Engineer based in Pakistan",
+    description:
+        "Farhan Ali is a software enginner building deep softwares with simple and clean look",
+    metadataBase: "https://farhanali.org",
+    authors: [{ name: "Farhan Ali" }],
+    robots: { index: true, follow: true },
+    themeColor: "#F0EEED",
+    colorScheme: "dark light",
+    alternates: { canonical: "https://farhanali.org" },
+    manifest: "/site.webmanifest",
+    openGraph: {
+        type: "website",
+        url: "https://farhanali.org",
+        title: "Farhan Ali • Software Engineer based in Pakistan",
+        description:
+            "Farhan Ali is a software enginner building deep softwares with simple and clean look",
+        images: [{ url: "https://farhanali.org/images/social-preview.png" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        site: "@farhanali.org",
+        title: "Farhan Ali • Software Engineer based in Pakistan",
+        description:
+            "Farhan Ali is a software enginner building deep softwares with simple and clean look",
+        images: ["https://farhanali.org/images/social-preview.png"],
+    },
+};
+
+const { path = "/", metadata: propsMetadata } = Astro.props;
+
+// Compute field-level merging where child overrides parent
+const metadata = mergeMetadata(defaultMetadata, propsMetadata);
+
+// Logical flags to confirm a block contains defined content before generating elements
+const hasOpenGraph = !!(
+    metadata.openGraph?.type ||
+    metadata.openGraph?.url ||
+    metadata.openGraph?.title ||
+    metadata.openGraph?.description ||
+    metadata.openGraph?.images
+);
+const hasTwitter = !!(
+    metadata.twitter?.card ||
+    metadata.twitter?.site ||
+    metadata.twitter?.title ||
+    metadata.twitter?.description ||
+    metadata.twitter?.images
+);
+
+// Fallback logic for image string structures
+const ogImageUrl =
+    typeof metadata.openGraph?.images?.[0] === "string"
+        ? metadata.openGraph.images[0]
+        : (metadata.openGraph?.images?.[0] as any)?.url;
+
+const twitterImageUrl =
+    typeof metadata.twitter?.images?.[0] === "string"
+        ? metadata.twitter.images[0]
+        : ((metadata.twitter?.images?.[0] as any)?.url ?? ogImageUrl);
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {
+            metadata.title && (
+                <title>
+                    {typeof metadata.title === "string"
+                        ? metadata.title
+                        : metadata.title?.default}
+                </title>
+            )
+        }
+        {
+            metadata.description && (
+                <meta name="description" content={metadata.description} />
+            )
+        }
+
+        {
+            /* Fixed: removed /public prefix so assets load from root in built environments */
+        }
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/images/favicon.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/images/favicon.png"
+        />
+
+        {
+            metadata.alternates?.canonical && (
+                <link rel="canonical" href={metadata.alternates.canonical} />
+            )
+        }
+        {
+            metadata.authors?.[0]?.name && (
+                <meta name="author" content={metadata.authors[0].name} />
+            )
+        }
+
+        <meta
+            name="robots"
+            content={`${metadata.robots?.index !== false ? "index" : "noindex"}, ${metadata.robots?.follow !== false ? "follow" : "nofollow"}`}
+        />
+        {
+            metadata.themeColor && (
+                <meta
+                    name="theme-color"
+                    content={
+                        typeof metadata.themeColor === "string"
+                            ? metadata.themeColor
+                            : "#F0EEED"
+                    }
+                />
+            )
+        }
+        {
+            metadata.colorScheme && (
+                <meta name="color-scheme" content={metadata.colorScheme} />
+            )
+        }
+
+        {
+            /* Conditional OpenGraph wrapper blocks tailored to field metadata definition */
+        }
+        {
+            hasOpenGraph && (
+                <>
+                    {metadata.openGraph?.type && (
+                        <meta
+                            property="og:type"
+                            content={metadata.openGraph.type}
+                        />
+                    )}
+                    {metadata.openGraph?.url && (
+                        <meta
+                            property="og:url"
+                            content={metadata.openGraph.url}
+                        />
+                    )}
+                    {metadata.openGraph?.title && (
+                        <meta
+                            property="og:title"
+                            content={metadata.openGraph.title}
+                        />
+                    )}
+                    {metadata.openGraph?.description && (
+                        <meta
+                            property="og:description"
+                            content={metadata.openGraph.description}
+                        />
+                    )}
+                    {ogImageUrl && (
+                        <meta property="og:image" content={ogImageUrl} />
+                    )}
+                </>
+            )
+        }
+
+        {
+            /* Conditional Twitter wrapper blocks tailored to field metadata definition */
+        }
+        {
+            hasTwitter && (
+                <>
+                    {metadata.twitter?.card && (
+                        <meta
+                            name="twitter:card"
+                            content={metadata.twitter.card}
+                        />
+                    )}
+                    {metadata.twitter?.site && (
+                        <meta
+                            name="twitter:site"
+                            content={metadata.twitter.site}
+                        />
+                    )}
+                    {metadata.twitter?.title && (
+                        <meta
+                            name="twitter:title"
+                            content={metadata.twitter.title}
+                        />
+                    )}
+                    {metadata.twitter?.description && (
+                        <meta
+                            name="twitter:description"
+                            content={metadata.twitter.description}
+                        />
+                    )}
+                    {twitterImageUrl && (
+                        <meta name="twitter:image" content={twitterImageUrl} />
+                    )}
+                </>
+            )
+        }
+
+        {metadata.manifest && <link rel="manifest" href={metadata.manifest} />}
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org/",
+                "@type": "Person",
+                "name": "Farhan Ali",
+                "jobTitle": "Software Engineer",
+                "url": "https://farhanali.org",
+                "description": "Software engineer specializing in high-performance systems architecture, Rust engineering, and minimal web design.",
+                "publishingPrinciples": "https://farhanali.org/work/",
+                "sameAs": [
+                    "https://github.com/Farhan-Ali-Rajpoot",
+                    "https://github.com/Farhan-Ali-Rajpoot/omnyx",
+                    "https://github.com/Farhan-Ali-Rajpoot/dataseal"
+                ],
+                "knowsAbout": [
+                    "Rust",
+                    "High-Performance Systems",
+                    "Linux",
+                    "Systems Engineering",
+                    "Hyper-Converged Infrastructure"
+                ]
+            }
+        </script>
+
+        <script>
+            import "/src/scripts/index.js";
+        </script>
+    </head>
+
+    <body id="view-container">
+        <!-- Page Transition Container -->
+        <!-- <div
+            class="pt-container"
+            style="height: 100vh; width: 100vw; display: flex; position: fixed; top: 0; left: 0; z-index: 20; pointer-events: none; 
+    "
+        >
+            <div
+                class="pt-column"
+                style="height: 100%; flex: 1; background-color: var(--color-green); border-right: solid 1px rgba(255, 255, 255, 0.2); transition: none !important;"
+            >
+            </div>
+            <div
+                class="pt-column"
+                style="height: 100%; flex: 1; background-color: var(--color-green); border-right: solid 1px rgba(255, 255, 255, 0.2); transition: none !important;"
+            >
+            </div>
+            <div
+                class="pt-column"
+                style="height: 100%; flex: 1; background-color: var(--color-green); border-right: solid 1px rgba(255, 255, 255, 0.2); transition: none !important;"
+            >
+            </div>
+            <div
+                class="pt-column"
+                style="height: 100%; flex: 1; background-color: var(--color-green); border-right: solid 1px rgba(255, 255, 255, 0.2); transition: none !important;"
+            >
+            </div>
+            <div
+                class="pt-column"
+                style="height: 100%; flex: 1; background-color: var(--color-green); border-right: solid 1px rgba(255, 255, 255, 0.2); transition: none !important;"
+            >
+            </div>
+            <div
+                class="pt-column"
+                style="height: 100%; flex: 1; background-color: var(--color-green); border-right: solid 1px rgba(255, 255, 255, 0.2); transition: none !important;"
+            >
+            </div>
+        </div> -->
+
+
+
+        <!-- Main Content -->
+        <div>
+            <slot />
+        </div>
+
+        <!-- Footer -->
+        <Footer />
+    </body>
+</html>
