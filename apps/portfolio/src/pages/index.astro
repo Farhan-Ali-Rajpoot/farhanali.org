@@ -29,7 +29,7 @@ import RootLayout from "../layouts/RootLayout.astro";
 			}
 		}
 
-		@media (max-width: 991px) {
+		@media (max-width: 1024px) {
 			.hero-section {
 				height: auto !important;
 				max-height: none !important;
@@ -63,6 +63,10 @@ import RootLayout from "../layouts/RootLayout.astro";
 			.location-widget {
 				width: 100% !important;
 				height: calc(var(--sfu) * 22) !important;
+			}
+			.location-widget .image-container {
+				width: 100% !important;
+				height: 100% !important;
 			}
 		}
 	</style>
@@ -270,7 +274,7 @@ import RootLayout from "../layouts/RootLayout.astro";
 			style="align-self: center; justify-self: center; display: flex; flex-direction: column; gap: calc(var(--sfu)*2); align-items: center; "
 		>
 			<div
-				style="height: calc(var(--sfu)*10); width: calc(var(--sfu)*10); border-radius: 50%; background-color: var(--color-bg-surface-light); 
+				style="height: calc(var(--sfu)*9); width: calc(var(--sfu)*9); border-radius: 50%; background-color: var(--color-bg-surface-light); 
                         border: solid calc(var(--sfu)*.25) var(--color-bg-surface-light); position: relative;"
 			>
 				<img
@@ -312,7 +316,7 @@ import RootLayout from "../layouts/RootLayout.astro";
 
 			<h1
 				class="hero-heading"
-				style="font-size: calc(var(--sfu) * 3.75); line-height: 1.1; font-weight: 600; text-align: center; max-width: 16ch;"
+				style="font-size: calc(var(--sfu) * 3.5); line-height: 1.1; font-weight: 600; text-align: center; max-width: 16ch;"
 			>
 				A <span style="font-style: italic; color: var(--color-blue); "
 					>Researcher</span
@@ -440,8 +444,6 @@ import RootLayout from "../layouts/RootLayout.astro";
 			class="location-widget"
 			style="
 	 	    justify-self: end;
-	 	    height: calc(var(--sfu) * 18);
-	 	    width: calc(var(--sfu) * 14.5);
 	 	    border-radius: calc(var(--sfu) * 1.75);
 	 	    background-color: var(--color-bg-surface-light);
 	 	    padding: calc(var(--sfu) * 1);
@@ -520,9 +522,11 @@ import RootLayout from "../layouts/RootLayout.astro";
 
 			<!-- Image container – automatically fills remaining height -->
 			<div
+				class="image-container"
 				style="
+					width: calc(var(--sfu)*12.5);
 	 	      		flex: 1;                        
-	 	      		border-radius: calc(var(--sfu) * 1.75);
+	 	      		border-radius: calc(var(--sfu) * 1.25);
 	 	      		display: flex;
 	 	      		align-items: center;
 	 	      		justify-content: center;
