@@ -316,7 +316,7 @@ import RootLayout from "../layouts/RootLayout.astro";
 
 			<h1
 				class="hero-heading"
-				style="font-size: calc(var(--sfu) * 3.5); line-height: 1.1; font-weight: 600; text-align: center; max-width: 16ch;"
+				style="font-size: calc(var(--sfu) * 3.5); line-height: 1.05; font-weight: 600; text-align: center; max-width: 16ch;"
 			>
 				A <span style="font-style: italic; color: var(--color-blue); "
 					>Researcher</span
@@ -381,7 +381,7 @@ import RootLayout from "../layouts/RootLayout.astro";
 							style="transition: transform .7s cubic-bezier(0.075, 0.82, 0.165, 1); position: absolute; 
                                 top: 0; left: 0; transform: translateY(100%);"
 						>
-						Research & Essay
+							Research & Essay
 						</p>
 					</div>
 				</a>
@@ -546,61 +546,127 @@ import RootLayout from "../layouts/RootLayout.astro";
 		</div>
 	</section>
 
-	<!-- Ribbon -->
-	<div
-		style="margin-top: calc(var(--sfu)*5); padding: calc(var(--sfu)*1.5) 0 calc(var(--sfu)*1.5); width: 100%; background-color: var(--color-green); 
-            display: flex; align-items: center; gap: calc(var(--sfu)*1.5); text-wrap: nowrap; font-size: calc(var(--sfu)*3); color: var(--color-text-light);
-        	overflow-x: hidden;"
-	>
-		Farhan Ali
-		<svg
-			viewBox="0 0 24 24"
-			fill="currentColor"
-			style="height: 0.85em; width: 0.85em; flex-shrink: 0;"
-		>
-			<path
-				d="M12 2c0 5.523-4.477 10-10 10 5.523 0 10 4.477 10 10 0-5.523 4.477-10 10-10-5.523 0-10-4.477-10-10z"
-			></path>
-		</svg>
-		Farhan Ali
-		<svg
-			viewBox="0 0 24 24"
-			fill="currentColor"
-			style="height: 0.85em; width: 0.85em; flex-shrink: 0;"
-		>
-			<path
-				d="M12 2c0 5.523-4.477 10-10 10 5.523 0 10 4.477 10 10 0-5.523 4.477-10 10-10-5.523 0-10-4.477-10-10z"
-			></path>
-		</svg>
-		Farhan Ali
-		<svg
-			viewBox="0 0 24 24"
-			fill="currentColor"
-			style="height: 0.85em; width: 0.85em; flex-shrink: 0;"
-		>
-			<path
-				d="M12 2c0 5.523-4.477 10-10 10 5.523 0 10 4.477 10 10 0-5.523 4.477-10 10-10-5.523 0-10-4.477-10-10z"
-			></path>
-		</svg>
-		Farhan Ali
-		<svg
-			viewBox="0 0 24 24"
-			fill="currentColor"
-			style="height: 0.85em; width: 0.85em; flex-shrink: 0;"
-		>
-			<path
-				d="M12 2c0 5.523-4.477 10-10 10 5.523 0 10 4.477 10 10 0-5.523 4.477-10 10-10-5.523 0-10-4.477-10-10z"
-			></path>
-		</svg>
-		Farhan Ali
-	</div>
-
 	<!-- Introduction -->
-	<section style="padding: calc(var(--sfu)*10) 0 calc(var(--sfu)*10);">
-		<h1
-			style="justify-self: center; font-size: calc((var(--sfu)*5)); text-align: center; line-height: 1; font-weight: 400;"
+	<section
+		style="padding: calc(var(--sfu)*10) calc(var(--sfu)*2) calc(var(--sfu)*10) calc(var(--sfu)*2); display: flex; flex-direction: column; align-items: center; 
+		gap: calc(var(--sfu)*7);"
+	>
+		<style>
+			@media (max-width: 640px) {
+				.description-paragraph {
+					font-size: calc(var(--sfu)*1.5) !important;
+				}
+				.hobby-container {
+					grid-template-columns: 1fr !important;
+				}
+			}
+		</style>
+		<div 
+			class="description-paragraph"
+			style="max-width: calc(var(--sfu) * 55); font-size: calc(var(--sfu) * 2.25); text-align: center; font-weight: 500; letter-spacing: -0.02em;"
 		>
-			Who is Farhan?
-		</h1>
+			Fueled by an endless drive to learn and innovate—always excited to <span
+				style="color: var(--color-blue);">explore</span
+			> uncharted domains, tackle complex challenges, master unfamiliar concepts,
+			and <span style="color: var(--color-blue);">build</span> without limits
+			across these core pillars:
+		</div>
+		<div
+			class="hobby-container"
+			style="display: grid; grid-template-columns: repeat(2, 1fr); gap: calc(var(--sfu)*1);"
+		>
+			<div
+				style="display: flex; gap: calc(var(--sfu)*3); padding: calc(var(--sfu)*1.5) 0 calc(var(--sfu)*3) 0; border-top: calc(var(--sfu)*0.04125) solid rgb(219, 219, 219);"
+			>
+				<div
+					style="color: var(--color-text-muted); font-size: calc(var(--sfu)*1);"
+				>
+					01
+				</div>
+				<div
+					style="display: flex; flex-direction: column; gap: calc(var(--sfu)*1.5);"
+				>
+					<div
+						style="font-size: calc(var(--sfu)*1); -webkit-text-stroke: calc(var(--sfu)*0.015) var(--color-text);"
+					>
+						Software Engineer
+					</div>
+					<p style="max-width: calc(var(--sfu)*25);">
+						Designing high-performance backend systems and modern
+						web architectures, focusing on extreme speed,
+						scalability, and clean code execution.
+					</p>
+				</div>
+			</div>
+			<div
+				style="display: flex; gap: calc(var(--sfu)*3); padding: calc(var(--sfu)*1.5) 0 calc(var(--sfu)*3) 0; border-top: calc(var(--sfu)*0.04125) solid rgb(219, 219, 219);"
+			>
+				<div
+					style="color: var(--color-text-muted); font-size: calc(var(--sfu)*1);"
+				>
+					02
+				</div>
+				<div
+					style="display: flex; flex-direction: column; gap: calc(var(--sfu)*1.5);"
+				>
+					<div
+						style="font-size: calc(var(--sfu)*1); -webkit-text-stroke: calc(var(--sfu)*0.015) var(--color-text);"
+					>
+						Researcher
+					</div>
+					<p style="max-width: calc(var(--sfu)*25);">
+						Exploring complex technical domains, analyzing core
+						principles, and documenting findings to bridge
+						theoretical insights with practical implementations.
+					</p>
+				</div>
+			</div>
+			<div
+				style="display: flex; gap: calc(var(--sfu)*3); padding: calc(var(--sfu)*1.5) 0 calc(var(--sfu)*3) 0; border-top: calc(var(--sfu)*0.04125) solid rgb(219, 219, 219);"
+			>
+				<div
+					style="color: var(--color-text-muted); font-size: calc(var(--sfu)*1);"
+				>
+					03
+				</div>
+				<div
+					style="display: flex; flex-direction: column; gap: calc(var(--sfu)*1.5);"
+				>
+					<div
+						style="font-size: calc(var(--sfu)*1); -webkit-text-stroke: calc(var(--sfu)*0.015) var(--color-text);"
+					>
+						Writer
+					</div>
+					<p style="max-width: calc(var(--sfu)*25);">
+						Crafting structured essays, philosophical reflections,
+						and technical guides to distill complex ideas into
+						clear, engaging, and impactful narratives.
+					</p>
+				</div>
+			</div>
+			<div
+				style="display: flex; gap: calc(var(--sfu)*3); padding: calc(var(--sfu)*1.5) 0 calc(var(--sfu)*3) 0; border-top: calc(var(--sfu)*0.04125) solid rgb(219, 219, 219);"
+			>
+				<div
+					style="color: var(--color-text-muted); font-size: calc(var(--sfu)*1);"
+				>
+					04
+				</div>
+				<div
+					style="display: flex; flex-direction: column; gap: calc(var(--sfu)*1.5);"
+				>
+					<div
+						style="font-size: calc(var(--sfu)*1); -webkit-text-stroke: calc(var(--sfu)*0.015) var(--color-text);"
+					>
+						Sports Man
+					</div>
+					<p style="max-width: calc(var(--sfu)*25);">
+						Cultivating discipline, sharp tactical focus, and
+						physical endurance through athletic training,
+						competitive gaming, and active sports endeavors.
+					</p>
+				</div>
+			</div>
+		</div>
 	</section>
 </RootLayout>
