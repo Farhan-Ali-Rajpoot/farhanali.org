@@ -27,8 +27,20 @@
             z-index: 11; pointer-events: none; opacity: 0; transition: opacity 0.8s cubic-bezier(0.075, 0.82, 0.165, 1); cursor: pointer;"></label><!-- Navbar --><nav style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 10; display: flex; justify-content: space-between; align-items: center;
                  padding: calc(var(--sfu)*1.75);"><a href="/" style="display: flex; align-items: end; font-weight: 300; gap: calc(var(--sfu)*.25);"><span style="margin: 0; font-size: calc(var(--sfu)*1.25); font-weight: 400; letter-spacing: calc(var(--sfu)*-0.01);">Farhan Ali</span><div style="background-color: var(--color-text); height: calc(var(--sfu)*.2); width: calc(var(--sfu)*.2); border-radius: 50%;
                     transform: translateY(-125%);"></div></a><div id="nav-links" style="width: fit-content; display: flex; gap: calc(var(--sfu)*4)"><div style="display: flex; align-items: center; gap: calc(var(--sfu)*2.25)"><a href="/" class="line-reveal-trigger" style="position: relative;">Home<div class="line-to-reveal" style="position: absolute; bottom: -10%; left: 0; display: block; width: 100%; height: 1px; background-color: var(--color-text);
-                         transition: transform .8s cubic-bezier(0.075, 0.82, 0.165, 1) .3s; transform: scaleX(0);"></div></a><a href="/work" data-active="true" class="line-reveal-trigger" style="position: relative;">Work<div class="line-to-reveal" style="position: absolute; bottom: -10%; left: 0; display: block; width: 100%; height: 1px; background-color: var(--color-text);
-                         transition: transform .8s cubic-bezier(0.075, 0.82, 0.165, 1) .3s; transform: scaleX(0);"></div></a><a href="/about" class="line-reveal-trigger" style="position: relative;">About<div class="line-to-reveal" style="position: absolute; bottom: -10%; left: 0; display: block; width: 100%; height: 1px; background-color: var(--color-text);
+                         transition: transform .8s cubic-bezier(0.075, 0.82, 0.165, 1) .3s; transform: scaleX(0);"></div></a><!-- <a
+                        href="/work"
+                        data-active={path == "/work" ? true : null}
+                        class="line-reveal-trigger"
+                        style="position: relative;"
+                    >
+                        Work
+                        <div
+                            class="line-to-reveal"
+                            style="position: absolute; bottom: -10%; left: 0; display: block; width: 100%; height: 1px; background-color: var(--color-text);
+                         transition: transform .8s cubic-bezier(0.075, 0.82, 0.165, 1) .3s; transform: scaleX(0);"
+                        >
+                        </div>
+                    </a> --><a href="/about" class="line-reveal-trigger" style="position: relative;">About<div class="line-to-reveal" style="position: absolute; bottom: -10%; left: 0; display: block; width: 100%; height: 1px; background-color: var(--color-text);
                          transition: transform .8s cubic-bezier(0.075, 0.82, 0.165, 1) .3s; transform: scaleX(0);"></div></a></div><a data-magnetic href="/contact/" class="contact-btn roll-trigger" style="padding: calc(var(--sfu)*.4) calc(var(--sfu)*1.75) calc(var(--sfu)*.4) calc(var(--sfu)*.4);
                     border-radius: 5em; background-color: var(--color-bg-surface-dark); color: var(--color-text-light); display: flex; align-items: center;
                     gap: calc(var(--sfu)*.75); text-decoration: none;"><div style="display: flex; align-items: center;"><div style="height: calc(var(--sfu)*2.4); width: calc(var(--sfu)*2.4); border-radius: 50%; background-color: var(--color-bg-surface-dark-secondary);
@@ -47,8 +59,19 @@
             overflow: hidden; padding: 0; top: calc(var(--sfu)*3); right: calc(var(--sfu)*3); max-width: calc(var(--sfu)*23);
             transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1), scale 0s; scale: 0; 
         "><div style="color: var(--color-text-muted);">Menu</div><div id="menu-links" style="display: flex; flex-direction: column; gap: calc(var(--sfu)*.25); font-size: calc(var(--sfu)* 2);"><a href="/" style="display: flex; align-items: center;"><div class="dot" style="height: calc(var(--sfu)*.5); width: calc(var(--sfu)*.5); background-color: var(--color-text-light); display: inline-block; 
-                border-radius: 50%; position: absolute;"></div><span style="display: inline-block;">Home</span></a><a href="/work/" data-active="true" style="display: flex; align-items: center;"><div class="dot" style="height: calc(var(--sfu)*.5); width: calc(var(--sfu)*.5); background-color: var(--color-text-light); display: inline-block; 
-                border-radius: 50%; position: absolute;"></div><span style="display: inline-block;">Work</span></a><a href="/about/" style="display: flex; align-items: center"><span style="display: inline-block;">About</span><div class="dot" style="height: calc(var(--sfu)*.5); width: calc(var(--sfu)*.5); background-color: var(--color-text-light); display: inline-block; 
+                border-radius: 50%; position: absolute;"></div><span style="display: inline-block;">Home</span></a><!-- <a
+                    href="/work/"
+                    data-active={path == "/work" ? true : null}
+                    style="display: flex; align-items: center;"
+                >
+                    <div
+                        class="dot"
+                        style="height: calc(var(--sfu)*.5); width: calc(var(--sfu)*.5); background-color: var(--color-text-light); display: inline-block; 
+                border-radius: 50%; position: absolute;"
+                    >
+                    </div>
+                    <span style="display: inline-block;">Work</span>
+                </a> --><a href="/about/" style="display: flex; align-items: center"><span style="display: inline-block;">About</span><div class="dot" style="height: calc(var(--sfu)*.5); width: calc(var(--sfu)*.5); background-color: var(--color-text-light); display: inline-block; 
                 border-radius: 50%; position: absolute;"></div></a><a href="/contact/" style="display: flex; align-items: center;"><span style="display: inline-block;">Contact</span><div class="dot" style="height: calc(var(--sfu)*.5); width: calc(var(--sfu)*.5); background-color: var(--color-text-light); display: inline-block; 
                 border-radius: 50%; position: absolute;"></div></a></div><div class="social-links" style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: calc(var(--sfu)*-0.5)"><div style="display: flex; gap: calc(var(--sfu)*.5); width: 100%; justify-content: space-evenly;"><a data-magnetic href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="height: calc(var(--sfu)*3.5); width: calc(var(--sfu)*3.5); border-radius: 50%; background-color: var(--color-bg-surface-dark-secondary); display: flex;
                             align-items: center; justify-content: center; color: var(--color-text-light, #ffffff); text-decoration: none;
